@@ -2,19 +2,18 @@ class Person
 {
     private int age=23;
     internal string name="enma";
+    private int age1 = 23;
 
-    public int Age
+    public int GetAge()
     {
-        get
+        return age;
+    }
+
+    public void SetAge(int value)
+    {
+        if (value > 20 && value < 30)
         {
-            return age;
-        } 
-        set
-        {
-         if( value>20 && value<30)   
-         {
-             age=value;
-         }
+            age = value;
         }
-    } =23;
+    }
 }    

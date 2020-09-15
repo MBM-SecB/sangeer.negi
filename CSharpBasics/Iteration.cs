@@ -6,7 +6,7 @@ namespace SelectAndLoop
 }
 class IterationStatement
 {
-        static void Main()
+        static void Main4488()
     {
         IterationStatement iterationStatement = new IterationStatement();
         iterationStatement.LearnWhileLoops();
@@ -15,7 +15,7 @@ class IterationStatement
         accessModifier.DoAnotherThing();
 
         Person person = new Person();
-        person.Age = 34;
+        person.SetAge(34);
 
     }
     void LearnForLoops()
