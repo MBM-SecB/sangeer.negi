@@ -5,6 +5,12 @@ namespace LearningClasses
         public string Name { get; set; }
         public int Population { get; set; }
 
+
+        public static readonly bool IsOnEarth = true;
+
+        //instance constructor
+
+
         //Default constructor - parameter less
         public Country()
         {
@@ -20,6 +26,12 @@ namespace LearningClasses
         {
             Name = name;
             Population = population;
+        }
+
+        //static constructor
+        static Country()
+        {
+            IsOnEarth = true;
         }
     }
 
