@@ -4,13 +4,17 @@ namespace CSharpBasics
 {
     class Program
     {
-        static void Main15485()
+        static void Main()
         {
-            Console.WriteLine("Hello World!");
-            Console.Write("hello");
-            Console.Write("hello");
-            float e=32.1f;
-            Console.WriteLine(e);
+            var square1 =new Square(23.45);
+            var square2 =new Square(4);
+            var square3 =new Square(12);
+
+            var rectangle=new Rectangle(23.5,12.2);
+            rectangle.PrintResult();
+ 
+            var x=square2.GetArea();
+            Console.WriteLine($"Area:{x}");
         }
     }
 }
