@@ -1,7 +1,7 @@
 using System;
 class PointCalculate
 {
-    static void Main444()
+    static void Main3()
     {
         PointCalculate p = new PointCalculate();
         p.Combine();

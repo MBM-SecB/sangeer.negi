@@ -3,7 +3,7 @@ namespace FirstCharacterInitial
 {
     class FirstCharacter
     {
-        static void Main()
+        static void Main1()
         {
             Console.WriteLine("Enter your name");
             string str = Console.ReadLine();

@@ -1,7 +1,7 @@
 using System;
 class NumberCompare
 {
-    static void Main123()
+    static void Main2()
     {
         NumberCompare n = new NumberCompare();
         n.CompareTwoNumbers();
