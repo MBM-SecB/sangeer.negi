@@ -1,100 +1,109 @@
 ﻿using System;
 using System.Linq;
 using System.Collections.Generic;
-
 namespace LINQ
 {
     class Program
     {
         static void Main()
-
         {
-            //LINQ - Language INtegrated Query
-            int[] numbers = { 12, 34, 23, 67, 445, 68, 10, 89, 26, 123, 43542 };
+            Program a  = new Program();
+            a.LearnLingOnComplexCollection();
+            //LINQ- Language INtegrated Query
 
-
-            //Method syntax
-            // take number greater than 50 
-            var result1 = numbers.Where(num => num > 50).Select(num => num);
+            int[] numbers ={12,34,23,67,445,65,10,89,144,135};
+            // Method Syntax
+            var result1= numbers.Where(num => num >50).Select(num => num);
 
             //Query expression Syntax
-            // take number greater than 50 
             var result2 = from num in numbers
-                          where num > 50
-                          select num;
-
-
-            //Restrictions -Where 
-            // take number greater than 50 and less than 70 
+                            where num > 50
+                            select num;
+            //Restrictions -where
             var result3 = from num in numbers
-                          where num > 50 && num < 70
-                          select num;
-
-
-            //Projection - select 
-            // take numbers which are even then square them
+                            where num > 50 && num <70
+                            select num;
+            //Projections -select
             var result4 = from num in numbers
-                          where num % 2 == 0
-                          select num * num;
-
-
-
-            // Ordering-orderby, orderby descending
-            //numbers in ascending order
+                            where num % 2==0
+                            select num * num;
+            // Ordering -orderby,orderby descending
             var result5 = from num in numbers
-                          orderby num
-                          select num;
-            //numbers in descending order
-            // var result5 = from num in numbers
-            //               orderby num descending
-            //               select num;
+                            orderby num descending
+                            select num;
+            // Partitionong: take,skip
+            var  result6 = numbers.Skip(5).Take(5);
+            //Checks the first element and if first number is not even then next will be echecked.
+            //result7=True
+            var result7 = numbers.Any(num => num % 2 ==0);
+            //result7=False
+            var result8 = numbers.All(num => num % 2 ==0);
+            // Generations:range
+            var result9 = Enumerable.Range(1,1000);
+            //Repeat Multiple times
+            var result10 = Enumerable.Repeat("Hello World", 20);
 
 
-            //Partitioning:skip,take
-            //takes first 5 element of array
-            var result6 = numbers.Take(5);
-            //skip first 5 element and takes later 5 elements in array
-            // var result6 = numbers.Skip(5).Take(5);
 
-            //Quantifiers-Any,All,Contains
-            //check any element if it meets condition 
-            var result7 = numbers.Any(num => num % 2 == 0);
-
-
-            //check all elements if every elements meets condition
-            var result8 = numbers.All(num => num % 2 == 0);
-
-            //check if array has certain elements
-            var result9 = numbers.Contains(23);
-
-            //Generations
-            var result10=Enumerable.Range(1,1000);
-            var result11=Enumerable.Repeat("Hello World!",20);
+            
         }
-
-
-        void LearnLinqOnComplexCollection()
+        void LearnLingOnComplexCollection()
         {
 
-            Country c1 = new Country("Nepal", "kathmandu", "Asia", 3242242434);
-            Country c2 = new Country("India", "Delhi", "Asia", 7522242434,DateTime.Parse("1947/11/1"));
-            Country c3 = new Country("England", "GB", "Europe", 1002242434);
-            Country c4 = new Country("Bhutan", "Thimpu", "Asia", 324434);
-            Country c5 = new Country("Russia", "Mosco", "Europe", 5242242434,DateTime.Parse("1907/11/1"));
-            Country c6 = new Country("Australia", "Canberra", "Australia", 42242434,DateTime.Parse("1943/11/1"));
+            Country c1 = new Country("Nepal","Kathmandu","Asia",124589);
+            Country c2 = new Country("India","Delhi","Asia",45124589, DateTime.Parse("1947/11/1"));
+            Country c3 = new Country("England","GB","Europe",58124589);
+            Country c4 = new Country("Bhutan","Thimpu","Asia",124589);
+            Country c5 = new Country("Russia","Moscow","Asia",124589, DateTime.Parse("1942/01/1"));
+            Country c6 = new Country("Australia","Canberra","Australia",124589, DateTime.Parse("1927/10/1"));
+            Country c7 = new Country("Argentina","Buenos Aires","South America",124589, DateTime.Parse("1827/10/1"));
+            Country c8 = new Country("Australia","Canberra","Australia",124589, DateTime.Parse("1947/10/1"));
+            Country c9 = new Country("Thailand","Bangkok","Asia",124589, DateTime.Parse("1925/10/1"));
+            Country c10 = new Country("Tanzania","Dodoma","Africa",124589, DateTime.Parse("1877/10/1"));
+            Country c11 = new Country("Tajikistan","Dushanbe","Asia",124589, DateTime.Parse("1837/10/1"));
+            Country c12 = new Country("Taiwan","Taipei","Asia",124589, DateTime.Parse("1827/10/1"));
+            Country c13 = new Country("Zimbabwe","Harare","Africa",124589, DateTime.Parse("1997/10/1"));
+            Country c14 = new Country("Venezuela","Caracas","South America",124589, DateTime.Parse("1987/10/1"));
+            Country c15 = new Country("Vatican City","Vatican City","Europe",1245, DateTime.Parse("1977/10/1"));
+            Country c16 = new Country("Uzbekistan","Tashkent","Asia",124589);
+            Country c17 = new Country("Uruguay","Montevideo","South America",124589, DateTime.Parse("1967/10/1"));
+            Country c18 = new Country("United States","Washington, D.C.","North America",124589, DateTime.Parse("1957/10/1"));
+            Country c19 = new Country("United Kingdom","London","Europe",1245, DateTime.Parse("1947/10/1"));
+            Country c20 = new Country("United Arab Emirates ","Abu Dhabi","Asia",124589, DateTime.Parse("1937/10/1"));
 
-            List<Country> countries = new List<Country> { c1, c2, c3, c4, c5, c6 };
 
-            //list  all asian country names
-            var result1 = from country in countries
-                          where country.Continent == "Asia"
-                          select country.Name;
-            //HW- create 20 country up to c20
-            //HW-List all asian country names which are never been invaded
-            var result2=from country in countries
+	
+            //Add 20 countries
+            var countries = new List<Country> {c1,c2,c3,c4,c5,c6};
+            //List all asian Country names
+            var result11 = from country in countries
+                            where country.Continent == "Asia"
+                            select country.Name;
+            //HW- List all asian country names which are never been invaded
+            var result12 = from country in countries
+                           where country.Continent == "Asia" && country.IndependenceDay == default
+                           select country.Name;
 
-            //Hw-List all Europian Country in ascending order that has population less than 500k
-            var result3=from country in countries
+            //Hw-List all europian countries in ascending order that has with population less than 500k
+            var result13 = from country in countries
+                            where country.Continent == "Europe" && country.Population < 500000
+                            select country.Name;
+
+
+
+            
+
+            Console.WriteLine("Countries that have never  invaded are: ");
+            foreach (var name in result12)
+            {
+                Console.WriteLine(name);
+            }
+            Console.WriteLine("Europian countries that has population less than 500k in ascending order: ");
+            foreach (var name in result13)
+            {
+                Console.WriteLine(name);
+            }
         }
+
     }
 }
