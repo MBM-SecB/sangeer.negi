@@ -16,4 +16,15 @@ public class EmployeeController : Controller
         
         return View(employee);
     }
+    [HttpGet]
+    public ActionResult Add()
+    {
+        return View();
+    }
+    [HttpPost]
+    
+    public ActionResult<bool> Add(Employee employee)
+    {
+        return true;
+    }
 }
