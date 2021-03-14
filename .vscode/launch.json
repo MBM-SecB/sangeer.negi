@@ -18,10 +18,11 @@
             "stopAtEntry": false
         },
         {
-            "name": ".NET Core Attach",
+            "name": "StudentsApi",
             "type": "coreclr",
-            "request": "attach",
-            "processId": "${command:pickProcess}"
+            "request": "launch",
+            "program": "${workspaceFolder}/StudentsApi/bin/Debug/net5.0/StudentsApi.dll",
+            "cwd": "${workspaceFolder}/StudentsApi"
         },
         {
             "name": "LINQ App",
